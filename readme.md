@@ -6,6 +6,8 @@ npm install --save smiley-feedback
 
 ### Use
 
+![example](example.gif)
+
 ```js
 feedback = require('smiley-feedback')
 
