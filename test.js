@@ -17,41 +17,36 @@ test('click faces', t => {
     'is a smile'
   )
 
-  t.equal(
-    /textarea/.test(f.innerHTML),
-    false,
+  t.notOk(
+    f.querySelector('textarea'),
     'no textarea to start with'
   )
 
   smile.click()
 
-  t.equal(
-    /textarea/.test(f.innerHTML),
-    true,
+  t.ok(
+    f.querySelector('textarea'),
     'textarea after clicking smile'
   )
 
   smile.click()
 
-  t.equal(
-    /textarea/.test(f.innerHTML),
-    false,
+  t.notOk(
+    f.querySelector('textarea'),
     'no textarea after clicking smile again'
   )
 
   frown.click()
 
-  t.equal(
-    /textarea/.test(f.innerHTML),
-    true,
+  t.ok(
+    f.querySelector('textarea'),
     'textarea after clicking frown'
   )
 
   smile.click()
 
-  t.equal(
-    /textarea/.test(f.innerHTML),
-    true,
+  t.ok(
+    f.querySelector('textarea'),
     'textarea remains when switching from face to face'
   )
 
