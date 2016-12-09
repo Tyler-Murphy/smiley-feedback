@@ -26,7 +26,11 @@ function feedback({
 
   const update = (options) => yo.update(
     toUpdate,
-    feedback(Object.assign(arguments[0], { toUpdate }, options))
+    feedback(Object.assign(
+      arguments[0] || {},
+      { toUpdate },
+      options
+    ))
   )
 
   const smileClick = () => update({
